@@ -1,0 +1,86 @@
+@font-face {
+    font-family: Remington-Noiseless;
+    src: url(../fonts/Remington-Noiseless.ttf);
+}
+
+body {
+    line-height: 1.3em;
+    font-size: large;
+    font-family: Remington-Noiseless;
+    color: #ddd;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+html {
+   background-color: grey;
+}
+
+.block {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.center-column {
+    max-width: 1280px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.images {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.images img {
+	height: 400px
+}
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+}
+
+i.left:hover,
+i.right:hover {
+	cursor: pointer;
+}
+
+i.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+i.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.social {
+    display: inline-block;
+    padding-right:20px;
+    padding-bottom: 20px;
+}
+
+a {
+    color: #ddd;
+}
+
+a:hover {
+    color: #eee;
+}
+
+.bg-darktone-three {
+    background-color: #555;
+}
+
+.bg-darktone-four {
+    background-color: #666;
+}
+
+
