@@ -47,10 +47,13 @@ jobs:
 
       # run build!
       - run: lein fig:min
-      #- run: sshpass -P $WEBHOST_PW $WEBHOST_USR@$WEBHHOST_URL 
-      - run: ssh $WEBHHOST_URL 
-      - run: $WEBHOST_USR
-      - run: $WEBHOST_PW
+      # [Figwheel] Compiling build dev to "resources/public/cljs-out/dev-main.js"
+      #- run: scp resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:/public_html/cljs-out/
+
+      # scp test.png elektroels.dk@linux116.unoeuro.com:public_html/images/test.png
+      - run: scp resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
+      #- run: $WEBHOST_PW??
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
