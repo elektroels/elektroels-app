@@ -49,9 +49,10 @@ jobs:
       - run: lein fig:min
       # [Figwheel] Compiling build dev to "resources/public/cljs-out/dev-main.js"
       #- run: scp resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:/public_html/cljs-out/
+      - run: apt-get install sshpass
 
       # scp test.png elektroels.dk@linux116.unoeuro.com:public_html/images/test.png
-      - run: scp resources/public/cljs-out/dev-main.js ssh -o StrictHostKeyChecking=no $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
+      - run: sshpass -p $WEBHOST_PW scp resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
       #- run: $WEBHOST_PW??
       #- run: yes
 
