@@ -62,10 +62,9 @@ jobs:
       - run: ls resources/public/
       - run: ls resources/public/cljs-out/
       - run: cp resources/public/cljs-out/dev-main.js dev-main.js
-      - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no dev-main.js $WEBHOST_USR@$WEBHOST_URL:/public_html/cljs-out/
+      - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no dev-main.js elektroels.dk@linux116.unoeuro.com:public_html/images/cljs-out/test.js
       #- run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/test.js
       
-      # scp test.png elektroels.dk@linux116.unoeuro.com:public_html/images/test.png
       # scp -o StrictHostKeyChecking=no resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/test.js
       #- run: rsync -e "ssh -o StrictHostKeyChecking=no" -avz resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
 
