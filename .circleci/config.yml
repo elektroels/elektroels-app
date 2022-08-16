@@ -50,14 +50,15 @@ jobs:
           key: v1-dependencies-{{ checksum "project.clj" }}
 
       # run build!
-      #- run: lein fig:min
+      - run: lein fig:min
       # [Figwheel] Compiling build dev to "resources/public/cljs-out/dev-main.js"
+     
       #- run: scp resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:/public_html/cljs-out/
       #- run: apt-get install sshpass
 
-      - run: sshpass -p $WEBHOST_PW ssh -o StrictHostKeyChecking=no $WEBHOST_USR@$WEBHOST_URL
+      #- run: sshpass -p $WEBHOST_PW ssh -o StrictHostKeyChecking=no $WEBHOST_USR@$WEBHOST_URL
 
-      #- run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/test.js
+      - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/test.js
       
       #- run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/test.js
       
