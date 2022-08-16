@@ -40,8 +40,6 @@ jobs:
 
       - run: lein deps
 
-      #- run: apk -install sshpass
-      #- run: dpkg -install sshpass
       - run: sudo apt-get install sshpass
 
       - save_cache:
@@ -53,25 +51,8 @@ jobs:
       - run: lein fig:min
       # [Figwheel] Compiling build dev to "resources/public/cljs-out/dev-main.js"
      
-      #- run: scp resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:/public_html/cljs-out/
-      #- run: apt-get install sshpass
-
-      #- run: sshpass -p $WEBHOST_PW ssh -o StrictHostKeyChecking=no $WEBHOST_USR@$WEBHOST_URL
-      - run: ls
-      - run: ls resources/
-      - run: ls resources/public/
-      - run: ls resources/public/cljs-out/
       - run: cp resources/public/cljs-out/dev-main.js dev-main.js
       - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
-
-      #- run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/test.js
-      
-      # scp -o StrictHostKeyChecking=no resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/test.js
-      #- run: rsync -e "ssh -o StrictHostKeyChecking=no" -avz resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
-
-      #- run: $WEBHOST_PW??
-      #- run: yes
-
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
