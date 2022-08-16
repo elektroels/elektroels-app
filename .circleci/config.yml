@@ -29,9 +29,6 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-      - dependencies:
-        - run: apk add openssh sshpass --no-cache
-
       - checkout
 
       # Download and cache dependencies
@@ -42,6 +39,8 @@ jobs:
             - v1-dependencies-
 
       - run: lein deps
+
+      - run: apk add openssh sshpass --no-cache
 
       - save_cache:
           paths:
