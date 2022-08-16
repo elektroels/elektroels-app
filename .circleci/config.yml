@@ -40,7 +40,8 @@ jobs:
 
       - run: lein deps
 
-      - run: dpkg -install sshpass
+      #- run: dpkg -install sshpass
+      - run: apt-get install sshpass
 
       - save_cache:
           paths:
