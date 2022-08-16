@@ -56,7 +56,7 @@ jobs:
       #- run: apt-get install sshpass
 
       # scp test.png elektroels.dk@linux116.unoeuro.com:public_html/images/test.png
-      - run: sshpass -p $WEBHOST_PW scp resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
+      - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
       #- run: rsync -e "ssh -o StrictHostKeyChecking=no" -avz resources/public/cljs-out/dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
 
       #- run: $WEBHOST_PW??
