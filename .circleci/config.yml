@@ -51,9 +51,18 @@ jobs:
       - run: lein fig:min
       # [Figwheel] Compiling build dev to "resources/public/cljs-out/dev-main.js"
      
+      # Deploy js
       - run: cp resources/public/cljs-out/dev-main.js dev-main.js
       - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
+      
+      # Deploy images
       - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no -r resources/public/images/* $WEBHOST_USR@$WEBHOST_URL:public_html/images
+      
+      # Deploy css
+      - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no -r resources/public/css/* $WEBHOST_USR@$WEBHOST_URL:public_html/css
+
+      # Deploy index.html
+      - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no -r resources/public/index.html $WEBHOST_USR@$WEBHOST_URL:public_html/index.html
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
