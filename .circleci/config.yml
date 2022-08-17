@@ -53,6 +53,7 @@ jobs:
      
       - run: cp resources/public/cljs-out/dev-main.js dev-main.js
       - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no dev-main.js $WEBHOST_USR@$WEBHOST_URL:public_html/cljs-out/dev-main.js
+      - run: sshpass -p $WEBHOST_PW scp -o StrictHostKeyChecking=no -r resources/public/images/* $WEBHOST_USR@$WEBHOST_URL:public_html/images
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
