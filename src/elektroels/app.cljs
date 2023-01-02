@@ -9,31 +9,28 @@
 
 ;; define your app data so that it doesn't get over-written on reload
 (def app-state (atom {:text "Hello world!"
-                          :headline "Welcome"
-                          :part1 "This is my homepage, please look at the pretty pictures."
-			  :part2 "I'm an it engineer who studied art history. Living in Copenhagen, 
-                                  drinking coffe, riding bikes, coding. 
-                                  Watching cycling, cooking, painting, drawing, playing computer, 
-				  thinking about AI, listening to music, vim user etc. etc.
-				  At the moment I work with frontend development."
-                          :phone-number "+45 42 71 22 72"
-                          :email "elektroels @ gmail.com"
-			  :github "https://github.com/elektroels"
-                          :meetup "http://www.meetup.com/members/186263611/"
-                          :twitter "https://twitter.com/elektroels"
-                          :linkedin "https://dk.linkedin.com/in/troels-henningsen-b0166763"
-                          :facebook "https://www.facebook.com/elektroels"
-                          :position 0
-                          :images '({ :name "ole" :src "/images/olemange.png"}
-                                    { :name "krokdodille" :src "/images/TurkisFrikodiler1.jpg" }
-                                    { :name "gaerdesmutte" :src "/images/Gaerdesmutte.JPG" }
-                                    { :name "sort-sky" :src "/images/SortSkymedgobler.jpg" }
-                                    { :name "turtle" :src "/images/Turtle.jpg" }
-                                    { :name "dame" :src "/images/Dame2.JPG" }
-                                    { :name "goble" :src "/images/Goble.jpg" }
-                                    { :name "monika" :src "/images/Monika.JPG" }
-                                    { :name "til-dennis" :src "/images/TilDennis.jpg" })
-                          }))
+                      :headline "Welcome"
+                      :part1 "Troels H is a creative programmer with a deep technical background."
+                      :part2 "An it engineer who studied art history.
+                              Lives in Copenhagen, drinks, rides, paints,
+                              codes, thinks, listens, dreams etc. etc."
+                      :phone-number "+45 42 71 22 72"
+                      :email "elektroels @ gmail.com"
+                      :github "https://github.com/elektroels"
+                      :meetup "http://www.meetup.com/members/186263611/"
+                      :twitter "https://twitter.com/elektroels"
+                      :linkedin "https://dk.linkedin.com/in/troels-henningsen-b0166763"
+                      :facebook "https://www.facebook.com/elektroels"
+                      :position 0
+                      :images '({:name "ole" :src "/images/olemange.png"}
+                                {:name "krokdodille" :src "/images/TurkisFrikodiler1.jpg"}
+                                {:name "gaerdesmutte" :src "/images/Gaerdesmutte.JPG"}
+                                {:name "sort-sky" :src "/images/SortSkymedgobler.jpg"}
+                                {:name "turtle" :src "/images/Turtle.jpg"}
+                                {:name "dame" :src "/images/Dame2.JPG"}
+                                {:name "goble" :src "/images/Goble.jpg"}
+                                {:name "monika" :src "/images/Monika.JPG"}
+                                {:name "til-dennis" :src "/images/TilDennis.jpg"})}))
 
 (defn get-app-element []
   (gdom/getElement "app"))
