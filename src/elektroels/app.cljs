@@ -8,8 +8,7 @@
 (defn multiply [a b] (* a b))
 
 ;; define your app data so that it doesn't get over-written on reload
-(def app-state (atom {:text "Hello world!"
-                      :headline "Welcome"
+(def app-state (atom {:headline "Welcome"
                       :part1 "Troels H is a creative programmer with a deep technical background."
                       :part2 "An it engineer who studied art history.
                               Lives in Copenhagen, drinks, rides, paints,
@@ -53,8 +52,7 @@
     [:div.center-column
      [:h1 (:headline @app-state)]
      [:p (:part1 @app-state)]
-     [:p (:part2 @app-state)]
-     [:p "At the moment I work with frontend development"]]]
+     [:p (:part2 @app-state)]]]
 
    [:div.block
     [:div.images
